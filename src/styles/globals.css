@@ -9,9 +9,14 @@ body {
 .list-container {
   height: 100vh;
   height: 100svh;
+
 }
 
 .list-view {
   border: 1px black solid;
   height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
