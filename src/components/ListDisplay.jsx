@@ -44,7 +44,7 @@ const ListDisplay = () => {
               </div>
             ))}
             <div className="item-container">
-              <input type="checkbox" className="checkbox" />
+              {/* <input type="checkbox" className="checkbox" /> */}
               <input
                 type="text"
                 className="new-item-input"
