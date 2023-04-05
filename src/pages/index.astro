@@ -1,5 +1,6 @@
 ---
 import ListDisplay from "../components/ListDisplay.jsx"
+import Header from "../components/Header.jsx";
 ---
 
 
@@ -8,12 +9,16 @@ import ListDisplay from "../components/ListDisplay.jsx"
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="stylesheet" href="src/styles/globals.css" />
+		<style>
+  		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap');
+		</style>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Grocery List Keepr</title>
+		<title>LIST</title>
 	</head>
 	<body>
-		<h1>GROCERY APP</h1>
+		<Header />
+		
 		<ListDisplay client:load />
 	</body>
 </html>

@@ -1,9 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import AddItemModal from './AddItemModal'
 
 const ListDisplay = () => {
   const [list, setList] = useState([])
   const [isActive, setIsActive] = useState(false)
+
+  useEffect(() => {
+    const storedList = localStorage.getItem('list')
+    if (storedList) {
+      setList(JSON.parse(storedList))
+    } else {
+      console.log('no list yet')
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('list', JSON.stringify(list))
+  }, [list])
 
   const handleClick = (e) => {
     e.preventDefault()
@@ -13,13 +26,32 @@ const ListDisplay = () => {
   return (
     <>
       <section className="list-container">
-        <h2>My List</h2>
         <section className="list-view">
-          <section className="item-containter">
+          <h2>My List</h2>
+          {/* <input
+            type="text"
+            placeholder="My List"
+            className="list-name"
+          ></input> */}
+
+          {/* CONVERT THIS INPUT INTO THE LIST NAME */}
+
+          <ul className="list-wrapper">
             {list?.map((item, index) => (
-              <p key={index}>{item}</p>
+              <div className="item-container" key={index}>
+                <input type="checkbox" className="checkbox" />
+                <li className="item">{item}</li>
+              </div>
             ))}
-          </section>
+            <div className="item-container">
+              {/* <input type="checkbox" className="checkbox" /> */}
+              <input
+                type="text"
+                className="new-item-input"
+                placeholder="Add Item"
+              />
+            </div>
+          </ul>
 
           <button onClick={handleClick}>Add Item</button>
         </section>
