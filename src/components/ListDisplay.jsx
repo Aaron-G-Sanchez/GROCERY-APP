@@ -44,12 +44,20 @@ const ListDisplay = () => {
               </div>
             ))}
             <div className="item-container">
-              {/* <input type="checkbox" className="checkbox" /> */}
               <input
-                type="text"
-                className="new-item-input"
-                placeholder="Add Item"
+                type="checkbox"
+                className="checkbox"
+                onChange={() => setIsActive(!isActive)}
               />
+              {isActive ? (
+                <form>
+                  <input
+                    type="text"
+                    className="new-item"
+                    placeholder="Add Item"
+                  />
+                </form>
+              ) : null}
             </div>
           </ul>
 
