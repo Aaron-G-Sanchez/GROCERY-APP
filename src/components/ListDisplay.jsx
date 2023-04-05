@@ -2,15 +2,13 @@ import { useState } from 'react'
 import AddItemModal from './AddItemModal'
 
 const ListDisplay = () => {
-  const [list, setList] = useState(['Eggs', 'Bacon', 'Ham'])
+  const [list, setList] = useState([])
   const [isActive, setIsActive] = useState(false)
 
   const handleClick = (e) => {
     e.preventDefault()
     setIsActive(!isActive)
   }
-
-  console.log(isActive)
 
   return (
     <>
