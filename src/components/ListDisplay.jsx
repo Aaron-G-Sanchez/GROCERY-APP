@@ -26,13 +26,16 @@ const ListDisplay = () => {
   return (
     <>
       <section className="list-container">
-        <h2>My List</h2>
         <section className="list-view">
-          <section className="item-containter">
+          <h2>My List</h2>
+          <ul className="list-wrapper">
             {list?.map((item, index) => (
-              <p key={index}>{item}</p>
+              <div className="item-container" key={index}>
+                <input type="checkbox" className="checkbox" />
+                <li className="item">{item}</li>
+              </div>
             ))}
-          </section>
+          </ul>
 
           <button onClick={handleClick}>Add Item</button>
         </section>
