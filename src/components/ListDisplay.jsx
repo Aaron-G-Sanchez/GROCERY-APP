@@ -28,6 +28,14 @@ const ListDisplay = () => {
       <section className="list-container">
         <section className="list-view">
           <h2>My List</h2>
+          {/* <input
+            type="text"
+            placeholder="My List"
+            className="list-name"
+          ></input> */}
+
+          {/* CONVERT THIS INPUT INTO THE LIST NAME */}
+
           <ul className="list-wrapper">
             {list?.map((item, index) => (
               <div className="item-container" key={index}>
@@ -35,6 +43,14 @@ const ListDisplay = () => {
                 <li className="item">{item}</li>
               </div>
             ))}
+            <div className="item-container">
+              <input type="checkbox" className="checkbox" />
+              <input
+                type="text"
+                className="new-item-input"
+                placeholder="Add Item"
+              />
+            </div>
           </ul>
 
           <button onClick={handleClick}>Add Item</button>
