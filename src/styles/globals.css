@@ -11,6 +11,8 @@
   --pale-green: #C7F9CC;
 }
 
+/* GENERAL CSS RESETS */
+
 * {
   margin: 0;
   padding: 0;
@@ -23,12 +25,13 @@ body {
   font-family: 'Roboto', Helvetica, sans-seric;
 }
 
+/* MAIN PAGE */
+
 .heading {
   height: 20svh;
   height: 20vh;
 
 }
-
 
 .list-container {
   height: 80svh;
@@ -48,9 +51,7 @@ body {
 /* .list-name {
   border: none;
   background-color: none;
-
 } */
-
 
 .list-wrapper {
   width: 20%;
@@ -72,7 +73,6 @@ body {
   gap: 10%;
 }
 
-
 .checkbox {
   appearance: none;
   border-radius: 50%;
@@ -83,6 +83,11 @@ body {
 
 .checkbox:checked {
   background-color: var(--bright-green);
+}
+
+.checkbox:hover {
+  background-color: var(--bright-green);
+  cursor: pointer;
 }
 
 .item {
