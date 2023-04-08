@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const AddItem = ({ list, setList, isActive, setIsActive }) => {
-  const initialState = { name: '' }
+  const initialState = { name: '', details: '', amount: '' }
   const [formValues, setFormValues] = useState(initialState)
 
   const handleChange = (e) => {
@@ -10,7 +10,7 @@ const AddItem = ({ list, setList, isActive, setIsActive }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setList([...list, formValues.name])
+    setList([...list, formValues])
     setFormValues(initialState)
     setIsActive(!isActive)
   }
