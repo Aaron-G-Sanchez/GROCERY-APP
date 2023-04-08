@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import AddItemModal from './AddItemModal'
+import AddItem from './AddItem'
 
 const ListDisplay = () => {
   const [list, setList] = useState([])
@@ -17,11 +17,6 @@ const ListDisplay = () => {
   useEffect(() => {
     localStorage.setItem('list', JSON.stringify(list))
   }, [list])
-
-  const handleClick = (e) => {
-    e.preventDefault()
-    setIsActive(!isActive)
-  }
 
   return (
     <>
@@ -44,26 +39,22 @@ const ListDisplay = () => {
               </div>
             ))}
             <div className="item-container">
-              {/* <input type="checkbox" className="checkbox" /> */}
               <input
-                type="text"
-                className="new-item-input"
-                placeholder="Add Item"
+                type="checkbox"
+                className="checkbox"
+                onChange={() => setIsActive(!isActive)}
               />
+              {isActive ? (
+                <AddItem
+                  list={list}
+                  setList={setList}
+                  isActive={isActive}
+                  setIsActive={setIsActive}
+                />
+              ) : null}
             </div>
           </ul>
-
-          <button onClick={handleClick}>Add Item</button>
         </section>
-
-        {isActive ? (
-          <AddItemModal
-            list={list}
-            setList={setList}
-            isActive={isActive}
-            setIsActive={setIsActive}
-          />
-        ) : null}
       </section>
     </>
   )

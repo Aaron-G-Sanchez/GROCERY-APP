@@ -5,7 +5,13 @@
   --red: #ef233c;
   --dark-red: #d90429;
   --black: #333533;
+
+  --blue: #22577a;
+  --bright-green: #80ED99;
+  --pale-green: #C7F9CC;
 }
+
+/* GENERAL CSS RESETS */
 
 * {
   margin: 0;
@@ -19,12 +25,13 @@ body {
   font-family: 'Roboto', Helvetica, sans-seric;
 }
 
+/* MAIN PAGE */
+
 .heading {
   height: 20svh;
   height: 20vh;
 
 }
-
 
 .list-container {
   height: 80svh;
@@ -44,27 +51,26 @@ body {
 /* .list-name {
   border: none;
   background-color: none;
-
 } */
 
-
 .list-wrapper {
-  width: 10%;
+  width: 20%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: 2%;
+  background-color: var(--blue);
+  color: var(--bright-green);
 }
 
 .item-container {
-  width: 100%;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 10%;
-  
 }
 
 .checkbox {
@@ -72,19 +78,22 @@ body {
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  border: 1px solid var(--black);
+  border: 1px solid var(--bright-green);
 }
 
 .checkbox:checked {
-  background-color: var(--black);
+  background-color: var(--bright-green);
+}
+
+.checkbox:hover {
+  background-color: var(--bright-green);
+  cursor: pointer;
 }
 
 .item {
   list-style: none;
 }
 
-
-.new-item-input {
-  background-color: var(--white);
-  border: none;
+.item:hover {
+  cursor: pointer;
 }

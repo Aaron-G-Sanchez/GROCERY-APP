@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const AddItemModal = ({ list, setList, isActive, setIsActive }) => {
+const AddItem = ({ list, setList, isActive, setIsActive }) => {
   const initialState = { name: '' }
   const [formValues, setFormValues] = useState(initialState)
 
@@ -26,13 +26,10 @@ const AddItemModal = ({ list, setList, isActive, setIsActive }) => {
             value={formValues.name}
             placeholder="New Item"
           />
-          <div className="modal-submit">
-            <button type="submit">Add</button>
-          </div>
         </form>
       </section>
     </>
   )
 }
 
-export default AddItemModal
+export default AddItem
