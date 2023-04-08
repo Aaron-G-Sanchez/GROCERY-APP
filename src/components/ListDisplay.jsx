@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 import AddItem from './AddItem'
 
 const ListDisplay = () => {
-  const [list, setList] = useState([])
+  const [list, setList] = useState([
+    { name: 'bacon', amount: '1 pack', details: '' }
+  ])
   const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
@@ -35,7 +37,7 @@ const ListDisplay = () => {
             {list?.map((item, index) => (
               <div className="item-container" key={index}>
                 <input type="checkbox" className="checkbox" />
-                <li className="item">{item}</li>
+                <li className="item">{item.name}</li>
               </div>
             ))}
             <div className="item-container">
