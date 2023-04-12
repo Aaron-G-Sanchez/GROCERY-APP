@@ -41,7 +41,8 @@ const ListDisplay = () => {
             <div className="item-container">
               <input
                 type="checkbox"
-                className="checkbox"
+                className="checkbox add-item"
+                checked={false}
                 onChange={() => setIsActive(!isActive)}
               />
               {isActive ? (

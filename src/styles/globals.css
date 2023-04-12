@@ -90,6 +90,10 @@ body {
   cursor: pointer;
 }
 
+.add-item {
+  border: 1px dotted var(--bright-green);
+}
+
 .item {
   list-style: none;
 }
