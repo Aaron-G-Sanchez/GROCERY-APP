@@ -1,4 +1,4 @@
-const AddDetails = () => {
+const ItemDetails = () => {
   return (
     <>
       <section>
@@ -8,4 +8,4 @@ const AddDetails = () => {
   )
 }
 
-export default AddDetails
+export default ItemDetails

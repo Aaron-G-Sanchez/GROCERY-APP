@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import AddItem from './AddItem'
+import ItemDetails from './ItemDetails'
 
 const ListDisplay = () => {
   const [list, setList] = useState([])
   const [isActive, setIsActive] = useState(false)
+  const [isSelected, setIsSelected] = useState(false)
 
   useEffect(() => {
     const storedList = localStorage.getItem('list')
@@ -17,6 +19,10 @@ const ListDisplay = () => {
   useEffect(() => {
     localStorage.setItem('list', JSON.stringify(list))
   }, [list])
+
+  const itemSelected = () => {
+    setIsSelected(!isSelected)
+  }
 
   return (
     <>
@@ -35,9 +41,13 @@ const ListDisplay = () => {
             {list?.map((item, index) => (
               <div className="item-container" key={index}>
                 <input type="checkbox" className="checkbox" />
-                <li className="item">{item?.name}</li>
+                <li className="item" onClick={itemSelected}>
+                  {item?.name}
+                </li>
+                {isSelected ? <ItemDetails /> : null}
               </div>
             ))}
+
             <div className="item-container">
               <input
                 type="checkbox"
